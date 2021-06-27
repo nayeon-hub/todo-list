@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <title>Focus To Do</title>
+  </head>
+  <body>
+    <header>
+      <button type="submit" class="login-btn">
+        <img src="./assets/user.png" alt="profile" />
+        <span>로그인</span>
+        <span>가입하기</span>
+      </button>
+
+      <div class="sub-btn">
+        <ul>
+          <li>
+            <button type="button" aria-label="join pro version">
+              <i class="fas fa-crown"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-label="todo list chart">
+              <i class="far fa-chart-bar"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-label="notice">
+              <i class="far fa-bell"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-label="settings">
+              <i class="fas fa-cog"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="login-modal">
+      <form action="get">
+        <input type="email" placeholder="이메일 주소" />
+        <input type="password" placeholder="비밀번호" />
+        <button type="button" class="login">로그인</button>
+      </form>
+      <button type="button" class="forget-pw">암호를 잊어버렸습니까?</button>
+      <button type="button" class="join">가입하기</button>
+    </div>
+  </body>
+</html>

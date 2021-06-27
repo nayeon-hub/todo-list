@@ -1,0 +1,87 @@
+@import "./valuable.scss";
+
+header {
+  height: 43px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 2px solid $bgColor;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  span {
+    color: $red;
+    &:last-child::before {
+      content: "|";
+      margin: 0 4px;
+    }
+  }
+}
+
+.sub-btn ul {
+  display: flex;
+  li {
+    margin-left: 10px;
+  }
+  i {
+    color: $darkGray;
+  }
+}
+
+.login-modal {
+  position: relative;
+  width: 272px;
+  height: 405px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  input {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+.login-modal form {
+  button {
+    width: 240px;
+    height: 35px;
+    background-color: $red;
+    color: #fff;
+    font-size: 16px;
+    margin: 27px auto 7px;
+  }
+  input:first-child {
+    margin-bottom: 10px;
+  }
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("../assets/logo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 53px;
+    height: 53px;
+    margin: 8px auto 64px;
+  }
+}
+
+.forget-pw {
+  color: $darkGray;
+  font-size: 12px;
+}
+
+.join {
+  position: absolute;
+  bottom: 0;
+  color: $red;
+}
