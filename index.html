@@ -44,14 +44,18 @@
         </ul>
       </div>
     </header>
-    <div class="login-modal">
-      <form action="get">
-        <input type="email" placeholder="이메일 주소" />
-        <input type="password" placeholder="비밀번호" />
-        <button type="button" class="login">로그인</button>
-      </form>
-      <button type="button" class="forget-pw">암호를 잊어버렸습니까?</button>
-      <button type="button" class="join">가입하기</button>
+    <div class="modal-container non-clicked">
+      <div class="login-modal">
+        <form action="get">
+          <input type="email" placeholder="이메일 주소" />
+          <input type="password" placeholder="비밀번호" />
+          <button type="button" class="login">로그인</button>
+        </form>
+        <button type="button" class="forget-pw">암호를 잊어버렸습니까?</button>
+        <button type="button" class="join">가입하기</button>
+        <button type="button" class="close">⨉</button>
+      </div>
     </div>
+    <script src="./modal.js"></script>
   </body>
 </html>
