@@ -1,10 +1,9 @@
-body = document.querySelector("body");
-modal = document.querySelector(".modal-container");
-loginbtn = document.querySelector(".login-btn");
-closebtn = modal.querySelector(".close");
-console.log(modal);
+const body = document.querySelector("body");
+const modal = document.querySelector(".modal-container");
+const loginMenu = document.querySelector(".login-menu");
+const closebtn = modal.querySelector(".close");
 
-loginbtn.addEventListener("click", () => {
+loginMenu.addEventListener("click", () => {
   modal.classList.remove("non-clicked");
 });
 

@@ -85,7 +85,8 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -99,41 +100,50 @@ hgroup,
 menu,
 nav,
 section {
-  display: block; }
+  display: block;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 ol,
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote,
 q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
   content: "";
-  content: none; }
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 button {
   border: none;
-  background-color: transparent; }
+  background-color: transparent;
+}
 
 button:active {
-  border: none; }
+  border: none;
+}
 
 input {
   padding: 0;
   outline: 0;
-  border: 1px solid black; }
+  border: 1px solid black;
+}
 
 header {
   height: 43px;
@@ -141,28 +151,36 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
-  border-bottom: 2px solid #f3f4f6; }
+  border-bottom: 2px solid #f3f4f6;
+}
 
-.login-btn {
+.login-menu {
   display: flex;
-  align-items: center; }
-  .login-btn img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px; }
-  .login-btn span {
-    color: #fd5653; }
-    .login-btn span:last-child::before {
-      content: "|";
-      margin: 0 4px; }
+  align-items: center;
+}
+.login-menu img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.login-menu span {
+  color: #fd5653;
+}
+.login-menu span:last-child::before {
+  content: "|";
+  margin: 0 4px;
+}
 
-.sub-btn ul {
-  display: flex; }
-  .sub-btn ul li {
-    margin-left: 10px; }
-  .sub-btn ul i {
-    color: #9b9b9b; }
+.sub-menu ul {
+  display: flex;
+}
+.sub-menu ul li {
+  margin-left: 10px;
+}
+.sub-menu ul i {
+  color: #9b9b9b;
+}
 
 .modal-container {
   width: 100%;
@@ -173,7 +191,8 @@ header {
   justify-content: center;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
 .login-modal {
   width: 272px;
@@ -184,69 +203,83 @@ header {
   padding: 10px;
   background-color: #fff;
   position: relative;
-  border-radius: 6px; }
-  .login-modal input {
-    font-size: 12px;
-    padding: 8px; }
+  border-radius: 6px;
+}
+.login-modal input {
+  font-size: 12px;
+  padding: 8px;
+}
 
 .login-modal form {
-  text-align: center; }
-  .login-modal form button {
-    padding: 8px 99px;
-    background-color: #fd5653;
-    color: #fff;
-    font-size: 16px;
-    margin: 27px auto 7px;
-    border-radius: 4px; }
-  .login-modal form input {
-    width: 220px;
-    height: 28px;
-    padding: 3px 10px;
-    border: 1px solid #c7c7c7;
-    border-radius: 4px;
-    font-weight: 400;
-    color: #9b9b9b; }
-  .login-modal form input::placeholder {
-    font-weight: 500;
-    color: #c7c7c7; }
-  .login-modal form input:first-child {
-    margin-bottom: 10px; }
-  .login-modal form::before {
-    content: "";
-    display: block;
-    background-image: url("../assets/logo.jpg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 53px;
-    height: 53px;
-    margin: 8px auto 64px; }
+  text-align: center;
+}
+.login-modal form button {
+  padding: 8px 99px;
+  background-color: #fd5653;
+  color: #fff;
+  font-size: 16px;
+  margin: 27px auto 7px;
+  border-radius: 4px;
+}
+.login-modal form input {
+  width: 220px;
+  height: 28px;
+  padding: 3px 10px;
+  border: 1px solid #c7c7c7;
+  border-radius: 4px;
+  font-weight: 400;
+  color: #9b9b9b;
+}
+.login-modal form input::placeholder {
+  font-weight: 500;
+  color: #c7c7c7;
+}
+.login-modal form input:first-child {
+  margin-bottom: 10px;
+}
+.login-modal form::before {
+  content: "";
+  display: block;
+  background-image: url("../assets/logo.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 53px;
+  height: 53px;
+  margin: 8px auto 64px;
+}
 
 .forget-pw {
   color: #9b9b9b;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
 .join {
   position: absolute;
   bottom: 10px;
   left: 50%;
   color: #fd5653;
-  transform: translate(-50%); }
+  transform: translate(-50%);
+}
 
 .close {
   position: absolute;
   top: 3px;
   right: 3px;
   font-size: 18px;
-  color: #9b9b9b; }
+  color: #9b9b9b;
+}
 
 .non-clicked {
-  display: none; }
+  display: none;
+}
 
 body {
   font-family: "Noto Sans KR", sans-serif;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 a,
 button {
-  font-family: "Noto Sans KR", sans-serif; }
+  font-family: "Noto Sans KR", sans-serif;
+}
