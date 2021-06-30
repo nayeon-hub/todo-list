@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
 html,
 body,
 div,
@@ -85,8 +85,7 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -100,186 +99,220 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol,
 ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote,
 q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
   content: "";
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 button {
   border: none;
   background-color: transparent;
-}
+  padding: 0; }
 
 button:active {
-  border: none;
-}
+  border: none; }
 
 input {
   padding: 0;
   outline: 0;
-  border: 1px solid black;
-}
+  border: 1px solid black; }
 
 header {
-  height: 43px;
+  position: relative;
+  height: 53px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
-  border-bottom: 2px solid #f3f4f6;
-}
+  border-bottom: 2px solid #f3f4f6; }
 
 .login-menu {
   display: flex;
   align-items: center;
-}
-.login-menu img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.login-menu span {
-  color: #fd5653;
-}
-.login-menu span:last-child::before {
-  content: "|";
-  margin: 0 4px;
-}
+  font-weight: 300;
+  font-size: 15px; }
+  .login-menu img {
+    width: 35px;
+    height: 31px;
+    border-radius: 50%;
+    margin-right: 10px; }
+  .login-menu span {
+    color: #fd5653; }
+  .login-menu span:last-child::before {
+    content: "|";
+    margin: 0 4px; }
 
-.sub-menu ul {
-  display: flex;
-}
-.sub-menu ul li {
-  margin-left: 10px;
-}
-.sub-menu ul i {
-  color: #9b9b9b;
-}
-
-.modal-container {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
+.profile-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  font-weight: 300;
+  font-size: 15px; }
+  .profile-menu img {
+    width: 35px;
+    height: 31px;
+    border-radius: 50%;
+    margin-right: 10px; }
+  .profile-menu span {
+    color: "black"; }
+  .profile-menu:hover {
+    cursor: pointer; }
+  .profile-menu i {
+    margin-left: 8px;
+    position: relative;
+    top: 2px;
+    color: #9b9b9b; }
+
+.sub-menu ul {
+  display: flex; }
+  .sub-menu ul li {
+    margin-left: 15px; }
+  .sub-menu ul i {
+    color: #9b9b9b; }
+
+.modal-container {
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); }
 
 .login-modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 272px;
   height: 405px;
   opacity: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #fff;
   position: relative;
-  border-radius: 6px;
-}
-.login-modal input {
-  font-size: 12px;
-  padding: 8px;
-}
+  border-radius: 6px; }
+  .login-modal input {
+    font-size: 13px;
+    padding: 8px; }
+  .login-modal button {
+    text-align: center;
+    width: 100%; }
+  .login-modal .close {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    color: #9b9b9b; }
 
 .login-modal form {
-  text-align: center;
-}
-.login-modal form button {
-  padding: 8px 99px;
-  background-color: #fd5653;
-  color: #fff;
-  font-size: 16px;
-  margin: 27px auto 7px;
-  border-radius: 4px;
-}
-.login-modal form input {
-  width: 220px;
-  height: 28px;
-  padding: 3px 10px;
-  border: 1px solid #c7c7c7;
-  border-radius: 4px;
-  font-weight: 400;
-  color: #9b9b9b;
-}
-.login-modal form input::placeholder {
-  font-weight: 500;
-  color: #c7c7c7;
-}
-.login-modal form input:first-child {
-  margin-bottom: 10px;
-}
-.login-modal form::before {
-  content: "";
-  display: block;
-  background-image: url("../assets/logo.jpg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 53px;
-  height: 53px;
-  margin: 8px auto 64px;
-}
+  text-align: center; }
+  .login-modal form button {
+    padding: 8px 0px;
+    background-color: #fd5653;
+    color: #fff;
+    font-size: 16px;
+    margin: 27px auto 7px;
+    border-radius: 4px; }
+  .login-modal form input {
+    width: 100%;
+    height: 34px;
+    padding: 3px 8px;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+    font-weight: 400;
+    color: #9b9b9b; }
+  .login-modal form input::placeholder {
+    font-weight: 500;
+    color: #c7c7c7; }
+  .login-modal form input:first-child {
+    margin-bottom: 10px; }
+  .login-modal form::before {
+    content: "";
+    display: block;
+    background-image: url("../assets/logo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 53px;
+    height: 53px;
+    margin: 8px auto 64px; }
 
 .forget-pw {
   color: #9b9b9b;
-  font-size: 12px;
-}
+  font-size: 12px; }
 
 .join {
   position: absolute;
   bottom: 10px;
   left: 50%;
   color: #fd5653;
-  transform: translate(-50%);
-}
+  transform: translate(-50%); }
 
-.close {
+.hiding {
+  display: none; }
+
+.drop-menu {
   position: absolute;
-  top: 3px;
-  right: 3px;
-  font-size: 18px;
-  color: #9b9b9b;
-}
+  left: 16px;
+  top: 48px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.1); }
+  .drop-menu li {
+    padding: 12px 0;
+    border-bottom: 1px solid #ececec; }
+    .drop-menu li:last-child {
+      border: none;
+      display: flex;
+      flex-direction: column; }
 
-.non-clicked {
-  display: none;
-}
+.drop-menu li {
+  display: flex;
+  flex-direction: column; }
 
-body {
+.drop-menu span {
+  line-height: 1.6;
+  padding: 0 18px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #c7c7c7; }
+
+.drop-menu button {
+  padding: 0 18px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 300; }
+  .drop-menu button:hover {
+    background: rgba(0, 0, 0, 0.04); }
+
+* {
   font-family: "Noto Sans KR", sans-serif;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
+
+body,
+html {
+  font-family: "Noto Sans KR", sans-serif; }
 
 a,
 button {
-  font-family: "Noto Sans KR", sans-serif;
-}
+  font-family: "Noto Sans KR", sans-serif; }

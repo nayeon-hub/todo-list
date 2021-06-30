@@ -13,24 +13,47 @@
   </head>
   <body>
     <header>
-      <button type="submit" class="login-menu">
+      <button type="button" class="login-menu">
         <img src="./assets/user.png" alt="profile" />
         <span>로그인</span>
         <span>가입하기</span>
       </button>
-      <div class="modal-container non-clicked">
+      <div class="modal-container hiding">
         <div class="login-modal">
           <form class="login-form">
             <input type="email" placeholder="이메일 주소" required />
             <input type="password" placeholder="비밀번호" required />
-            <button type="click" class="login">로그인</button>
+            <button type="submit" class="login">로그인</button>
           </form>
           <button type="button" class="forget-pw">
             암호를 잊어버렸습니까?
           </button>
           <button type="button" class="join">가입하기</button>
-          <button type="button" class="close">⨉</button>
+          <button type="button" class="close" aria-label="close button">
+            ⨉
+          </button>
         </div>
+      </div>
+      <button type="button" class="profile-menu hiding">
+        <img src="./assets/user.png" alt="profile" />
+        <span aria-label="user name"></span>
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </button>
+      <div class="drop-menu hiding">
+        <ul>
+          <li>
+            <span>최근 동기화 : 0 시간 전</span>
+            <button type="button">지금 동기화하기</button>
+          </li>
+          <li>
+            <span>프리미엄 기간 : 0일</span>
+            <button type="button">프리미엄 구매하기</button>
+          </li>
+          <li>
+            <button>계정 설정</button>
+            <button type="button" class="logout">계정 로그아웃</button>
+          </li>
+        </ul>
       </div>
       <div class="sub-menu">
         <ul>
@@ -58,7 +81,7 @@
       </div>
     </header>
 
-    <script src="./modal.js"></script>
+    <script src="./hiding.js"></script>
     <script src="./login.js"></script>
   </body>
 </html>

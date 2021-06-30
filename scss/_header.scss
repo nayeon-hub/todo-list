@@ -1,7 +1,8 @@
 @import "./valuable.scss";
 
 header {
-  height: 43px;
+  position: relative;
+  height: 53px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,17 +10,25 @@ header {
   border-bottom: 2px solid $bgColor;
 }
 
-.login-menu {
+@mixin left-top-menu($color) {
   display: flex;
   align-items: center;
+  font-weight: 300;
+  font-size: 15px;
   img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 31px;
     border-radius: 50%;
     margin-right: 10px;
   }
   span {
-    color: $red;
+    color: $color;
+  }
+}
+
+.login-menu {
+  @include left-top-menu($red);
+  span {
     &:last-child::before {
       content: "|";
       margin: 0 4px;
@@ -27,10 +36,23 @@ header {
   }
 }
 
+.profile-menu {
+  @include left-top-menu("black");
+  &:hover {
+    cursor: pointer;
+  }
+  i {
+    margin-left: 8px;
+    position: relative;
+    top: 2px;
+    color: $darkGray;
+  }
+}
+
 .sub-menu ul {
   display: flex;
   li {
-    margin-left: 10px;
+    margin-left: 15px;
   }
   i {
     color: $darkGray;
@@ -38,37 +60,51 @@ header {
 }
 
 .modal-container {
-  width: 100%;
-  height: 100vh;
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 .login-modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 272px;
   height: 405px;
   opacity: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+  // display: flex;
+  // flex-direction: column;
+  padding: 10px 20px;
   background-color: #fff;
   position: relative;
   border-radius: 6px;
   input {
-    font-size: 12px;
+    font-size: 13px;
     padding: 8px;
+  }
+  button {
+    text-align: center;
+    width: 100%;
+  }
+  .close {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    color: $darkGray;
   }
 }
 
 .login-modal form {
   text-align: center;
   button {
-    padding: 8px 99px;
+    padding: 8px 0px;
     background-color: $red;
     color: #fff;
     font-size: 16px;
@@ -76,9 +112,9 @@ header {
     border-radius: 4px;
   }
   input {
-    width: 220px;
-    height: 28px;
-    padding: 3px 10px;
+    width: 100%;
+    height: 34px;
+    padding: 3px 8px;
     border: 1px solid $fontGray;
     border-radius: 4px;
     font-weight: 400;
@@ -117,14 +153,48 @@ header {
   transform: translate(-50%);
 }
 
-.close {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  font-size: 18px;
-  color: $darkGray;
+.hiding {
+  display: none;
 }
 
-.non-clicked {
-  display: none;
+.drop-menu {
+  position: absolute;
+  left: 16px;
+  top: 48px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.1);
+  li {
+    padding: 12px 0;
+    border-bottom: 1px solid #ececec;
+    &:last-child {
+      border: none;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.drop-menu {
+  li {
+    display: flex;
+    flex-direction: column;
+  }
+  span {
+    line-height: 1.6;
+    padding: 0 18px;
+    font-size: 16px;
+    font-weight: 300;
+    color: $fontGray;
+  }
+  button {
+    padding: 0 18px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
 }
