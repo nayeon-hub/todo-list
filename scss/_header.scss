@@ -1,4 +1,4 @@
-@import "./valuable.scss";
+// @import "./valuable.scss";
 
 header {
   position: relative;
@@ -8,22 +8,7 @@ header {
   align-items: center;
   padding: 0 16px;
   border-bottom: 2px solid $bgColor;
-}
-
-@mixin left-top-menu($color) {
-  display: flex;
-  align-items: center;
-  font-weight: 300;
-  font-size: 15px;
-  img {
-    width: 35px;
-    height: 31px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  span {
-    color: $color;
-  }
+  background-color: #fff;
 }
 
 .login-menu {
@@ -66,22 +51,22 @@ header {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-.login-modal {
+.modal {
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.login-modal {
   width: 272px;
   height: 405px;
-  opacity: 1;
-  // display: flex;
-  // flex-direction: column;
   padding: 10px 20px;
-  background-color: #fff;
-  position: relative;
-  border-radius: 6px;
   input {
     font-size: 13px;
     padding: 8px;
@@ -176,6 +161,7 @@ header {
 }
 
 .drop-menu {
+  z-index: 1;
   li {
     display: flex;
     flex-direction: column;

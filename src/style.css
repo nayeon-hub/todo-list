@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  box-sizing: border-box; }
+
+body,
+html {
+  font-family: "Noto Sans KR", sans-serif; }
+
+a,
+button {
+  font-family: "Noto Sans KR", sans-serif; }
+
 html,
 body,
 div,
@@ -143,7 +155,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
-  border-bottom: 2px solid #f3f4f6; }
+  border-bottom: 2px solid #f3f4f6;
+  background-color: #fff; }
 
 .login-menu {
   display: flex;
@@ -194,20 +207,21 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1; }
 
-.login-modal {
+.modal {
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 6px; }
+
+.login-modal {
   width: 272px;
   height: 405px;
-  opacity: 1;
-  padding: 10px 20px;
-  background-color: #fff;
-  position: relative;
-  border-radius: 6px; }
+  padding: 10px 20px; }
   .login-modal input {
     font-size: 13px;
     padding: 8px; }
@@ -285,34 +299,98 @@ header {
       display: flex;
       flex-direction: column; }
 
-.drop-menu li {
+.drop-menu {
+  z-index: 1; }
+  .drop-menu li {
+    display: flex;
+    flex-direction: column; }
+  .drop-menu span {
+    line-height: 1.6;
+    padding: 0 18px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #c7c7c7; }
+  .drop-menu button {
+    padding: 0 18px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300; }
+    .drop-menu button:hover {
+      background: rgba(0, 0, 0, 0.04); }
+
+main {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: absolute;
+  min-height: 678px;
+  height: calc(100vh - 53px); }
 
-.drop-menu span {
-  line-height: 1.6;
-  padding: 0 18px;
-  font-size: 16px;
-  font-weight: 300;
-  color: #c7c7c7; }
+.container-left {
+  position: relative;
+  height: 100%;
+  width: 275px;
+  background: #fff;
+  border-right: 1px solid #f3f4f6; }
 
-.drop-menu button {
-  padding: 0 18px;
-  text-align: left;
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 300; }
-  .drop-menu button:hover {
-    background: rgba(0, 0, 0, 0.04); }
+.nav {
+  padding: 10px; }
 
-* {
-  font-family: "Noto Sans KR", sans-serif;
-  box-sizing: border-box; }
+.nav-todo {
+  border-bottom: 1px solid #ececec; }
 
-body,
-html {
-  font-family: "Noto Sans KR", sans-serif; }
+.nav-todo li {
+  height: 35px;
+  border-radius: 4px; }
 
-a,
-button {
-  font-family: "Noto Sans KR", sans-serif; }
+.add-project {
+  position: absolute;
+  bottom: 2px;
+  border-top: 1px solid #ececec;
+  width: 100%;
+  height: 45px;
+  padding: 10px; }
+  .add-project button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.add-project button:first-child::before {
+  content: "+";
+  margin-right: 6px; }
+
+.project-modal {
+  width: 340px;
+  height: 160px;
+  text-align: center;
+  padding: 18px; }
+  .project-modal h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px; }
+  .project-modal input {
+    display: block;
+    width: 100%;
+    padding: 8px 6px;
+    border-radius: 4px;
+    border: 1px solid #dddcdc; }
+  .project-modal .add-project-modal-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px; }
+
+.add-project-modal-btn button {
+  width: 87px;
+  height: 37px;
+  border-radius: 4px; }
+  .add-project-modal-btn button:last-child {
+    color: white;
+    background: #fd5653;
+    opacity: 0.9;
+    border: none; }
+  .add-project-modal-btn button:first-child {
+    color: black;
+    border: 1px solid #dddcdc; }
+
+body {
+  height: 100vh; }

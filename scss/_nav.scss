@@ -1,0 +1,89 @@
+main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  min-height: 678px;
+  height: calc(100vh - 53px);
+}
+
+.container-left {
+  position: relative;
+  height: 100%;
+  width: 275px;
+  background: #fff;
+  border-right: 1px solid $bgColor;
+}
+
+.nav {
+  padding: 10px;
+}
+
+.nav-todo {
+  border-bottom: 1px solid #ececec;
+}
+
+.nav-todo li {
+  height: 35px;
+  border-radius: 4px;
+}
+
+.add-project {
+  position: absolute;
+  bottom: 2px;
+  border-top: 1px solid #ececec;
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.add-project button:first-child {
+  &::before {
+    content: "+";
+    margin-right: 6px;
+  }
+}
+
+.project-modal {
+  width: 340px;
+  height: 160px;
+  text-align: center;
+  padding: 18px;
+  h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  input {
+    display: block;
+    width: 100%;
+    padding: 8px 6px;
+    border-radius: 4px;
+    border: 1px solid $lightGray;
+  }
+  .add-project-modal-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.add-project-modal-btn button {
+  width: 87px;
+  height: 37px;
+  border-radius: 4px;
+  &:last-child {
+    color: white;
+    background: $red;
+    opacity: 0.9;
+    border: none;
+  }
+  &:first-child {
+    color: black;
+    border: 1px solid $lightGray;
+  }
+}
