@@ -1,16 +1,16 @@
 const body = document.querySelector("body");
 const loginMenu = document.querySelector(".login-menu");
-const modal = document.querySelector(".modal-container");
-const closebtn = modal.querySelector(".close");
+const loginModal = document.querySelector("#login-page");
+const loginClose = loginModal.querySelector(".close");
 const userMenu = document.querySelector(".profile-menu");
 const dropMenu = document.querySelector(".drop-menu");
 
 loginMenu.addEventListener("click", () => {
-  modal.classList.remove("hiding");
+  loginModal.classList.remove("hiding");
 });
 
-closebtn.addEventListener("click", () => {
-  modal.classList.add("hiding");
+loginClose.addEventListener("click", () => {
+  loginModal.classList.add("hiding");
 });
 
 userMenu.addEventListener("click", () => {

@@ -1,5 +1,6 @@
 const loginForm = document.querySelector(".login-form");
 const loginInput = loginForm.querySelectorAll("input");
+
 const profileMenu = document.querySelector(".profile-menu");
 const profileName = profileMenu.querySelector("span");
 const logOutBtn = document.querySelector(".logout");
@@ -21,7 +22,7 @@ function logIn(event) {
 
   localStore(v[0]);
 
-  modal.classList.add("hiding");
+  loginModal.classList.add("hiding");
   profileMenu.classList.remove("hiding");
   loginMenu.classList.add("hiding");
 }
