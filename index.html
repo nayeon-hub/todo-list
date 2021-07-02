@@ -18,8 +18,13 @@
         <span>로그인</span>
         <span>가입하기</span>
       </button>
-      <div class="modal-container hiding">
-        <div class="login-modal">
+      <button type="button" class="profile-menu hiding">
+        <img src="./assets/user.png" alt="profile" />
+        <span aria-label="user name"></span>
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </button>
+      <div class="modal-container hiding" id="login-page">
+        <div class="login-modal modal">
           <form class="login-form">
             <input type="email" placeholder="이메일 주소" required />
             <input type="password" placeholder="비밀번호" required />
@@ -34,11 +39,6 @@
           </button>
         </div>
       </div>
-      <button type="button" class="profile-menu hiding">
-        <img src="./assets/user.png" alt="profile" />
-        <span aria-label="user name"></span>
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </button>
       <div class="drop-menu hiding">
         <ul>
           <li>
@@ -80,8 +80,56 @@
         </ul>
       </div>
     </header>
-
+    <main>
+      <div class="container-left">
+        <div class="nav">
+          <ul class="nav-todo">
+            <li>
+              오늘
+              <span>0h</span>
+              <span>3</span>
+            </li>
+            <li>
+              내일
+              <span>0h</span>
+              <span>0</span>
+            </li>
+            <li>
+              다음
+              <span>0h</span>
+              <span>0</span>
+            </li>
+            <li>
+              추후
+              <span>0h</span>
+              <span>0</span>
+            </li>
+            <li>완료됨</li>
+          </ul>
+          <ul class="nav-project"></ul>
+          </ul>
+        </div>
+        <div class="add-project">
+          <button class="add-item">프로젝트 추가</button>
+          <button class="add-tag"></button>
+          <button class="add-folder"></button>
+        </div>
+        <div class="modal-container hiding" id="project-add-page">
+          <div class="project-modal modal">
+            <h3>프로젝트 추가</h3>
+            <form action="" class="add-project-form">
+              <input type="text" placeholder="새로운 프로젝트 이름">
+              <div class="add-project-modal-btn">
+                <button type="button">취소</button>
+                <button type="submit">확인</button>
+              </div>  
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="./hiding.js"></script>
     <script src="./login.js"></script>
+    <script src="./addProject.js"></script>
   </body>
 </html>
