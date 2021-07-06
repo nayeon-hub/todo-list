@@ -73,8 +73,6 @@ function editorPj(ogName) {
     });
 
     localStorage.setItem("project", JSON.stringify(newPjList));
-
-    addProjectModal.classList.remove("editing");
     addProjectModal.classList.add("hiding");
 
     navList.innerHTML = "";
@@ -89,7 +87,6 @@ function editPj(e) {
   pjDropList[0].addEventListener("click", () => {
     projectDropMenu.classList.add("hiding"); //dropMenu 숨기고
     addProjectModal.classList.remove("hiding"); //모달창 보여주고
-    addProjectModal.classList.add("editing"); //수정중임을 클래스로 나타냄
     addProjectInput.value = originName;
     addProjectInput.focus();
   });
@@ -126,12 +123,7 @@ function init() {
   //프로젝트 추가를 눌렀을 때! 모달을 보여줌
   addProject.addEventListener("click", () => {
     addProjectModal.classList.remove("hiding");
-
-    const checkList = document.querySelector("#project-add-page").classList;
-    console.log(checkList[1]);
-    if (checkList[1] === undefined) {
-      addPj(); //project 추가하기 기능 할 수 있다!
-    }
+    addPj(); //project 추가하기 기능 할 수 있다!
   });
 
   //모달의 취소버튼을 눌렀을 때! modal 사라짐
