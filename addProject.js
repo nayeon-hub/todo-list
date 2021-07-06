@@ -26,7 +26,7 @@ function projectShow() {
     projectList = JSON.parse(pjList);
     // console.log(projectList);
     projectList.forEach((element) => {
-      itemCreate(JSON.parse(element)["value"]);
+      itemCreate(element["value"]);
     });
   }
 }
@@ -42,7 +42,7 @@ function projectStore(event) {
   item["value"] = p;
 
   //localstorage에 값 저장
-  projectList.push(JSON.stringify(item));
+  projectList.push(item);
   localStorage.setItem("project", JSON.stringify(projectList));
 
   //확인과 동시에 모달이 사라짐
@@ -64,12 +64,11 @@ function editorPj(ogName) {
     e.preventDefault();
     const editName = addProjectInput.value;
     let newPjList = localStorage.getItem("project");
-    newPjList = JSON.parse(newPjList);
-    console.log(newPjList);
+    newPjList = JSON.parse(newPjList); //string -> array로 바꿔줌
 
     newPjList.forEach((element) => {
-      if (JSON.parse(element).value === ogName) {
-        console.log({ value: JSON.parse(element).value });
+      if (element.value === ogName) {
+        element.value = editName;
       }
     });
 
@@ -100,7 +99,7 @@ function editPj(e) {
 
 function actPjList() {
   const listItems = navList.querySelectorAll("li");
-
+  console.log("b");
   //프로젝트 리스트 중 하나를 클릭했을 때! 드롭메뉴를 보여줌
   listItems.forEach((element) => {
     element.addEventListener("contextmenu", (e) => {
@@ -140,7 +139,7 @@ function init() {
     addProjectInput.value = "";
     addProjectModal.classList.add("hiding");
   });
-
+  console.log("a");
   actPjList();
 }
 

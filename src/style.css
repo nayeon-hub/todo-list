@@ -392,5 +392,8 @@ main {
     color: black;
     border: 1px solid #dddcdc; }
 
+.drop-menu-project {
+  position: absolute; }
+
 body {
   height: 100vh; }
