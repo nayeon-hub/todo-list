@@ -393,7 +393,9 @@ main {
     border: 1px solid #dddcdc; }
 
 .drop-menu-project {
-  position: absolute; }
+  position: absolute;
+  width: 93px;
+  margin-top: -52px; }
 
 body {
   height: 100vh; }

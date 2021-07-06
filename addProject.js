@@ -96,23 +96,42 @@ function editPj(e) {
 
 function actPjList() {
   const listItems = navList.querySelectorAll("li");
-  console.log("b");
+
   //프로젝트 리스트 중 하나를 클릭했을 때! 드롭메뉴를 보여줌
   listItems.forEach((element) => {
     element.addEventListener("contextmenu", (e) => {
       e.preventDefault();
+      const text = e.target.innerText;
+      const x = e.clientX;
+      const y = e.clientY;
+      projectDropMenu.style.top = `${y}px`;
+      projectDropMenu.style.left = `${x}px`;
       projectDropMenu.classList.remove("hiding");
 
       //드롭메뉴에서 편집을 눌렀을 때!
-      pjDropList[2].addEventListener("click", editPj(e)); //project 수정하기 기능
+      pjDropList[0].addEventListener("click", editPj(e)); //project 수정하기 기능
 
       //드롭메뉴에서 완료를 눌렀을 때!
-    });
-  });
+      //드롭메뉴에서 삭제를 눌렀을 때! 드롭메뉴 사라짐 삭제 준비!!
+      pjDropList[2].addEventListener("click", () => {
+        const removeText = text;
+        const lgValue = localStorage.getItem("project");
+        console.log(
+          JSON.stringify(
+            JSON.parse(lgValue).filter((item) => item.value != removeText)
+          ),
+          removeText
+        );
+        localStorage.setItem(
+          "project",
+          JSON.stringify(
+            JSON.parse(lgValue).filter((item) => item.value != removeText)
+          )
+        );
 
-  //드롭메뉴에서 삭제를 눌렀을 때! 드롭메뉴 사라짐 삭제 준비!!
-  pjDropList[2].addEventListener("click", () => {
-    projectDropMenu.classList.add("hiding"); //dropmenu 사라짐
+        projectDropMenu.classList.add("hiding"); //dropmenu 사라짐
+      });
+    });
   });
 }
 
