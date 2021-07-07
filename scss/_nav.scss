@@ -49,6 +49,7 @@ main {
 }
 
 .project-modal {
+  @extend %modal;
   width: 340px;
   height: 160px;
   text-align: center;
