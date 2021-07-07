@@ -94,48 +94,43 @@ function editPj(e) {
   editorPj(originName);
 }
 
-function actPjList() {
-  const listItems = navList.querySelectorAll("li");
+function dropCss(e) {
+  const text = e.target.innerText;
+  const x = e.clientX;
+  const y = e.clientY;
+  projectDropMenu.style.top = `${y}px`;
+  projectDropMenu.style.left = `${x}px`;
+  projectDropMenu.style.marginTop = `${-52}px`;
+  projectDropMenu.classList.remove("hiding");
 
-  //프로젝트 리스트 중 하나를 클릭했을 때! 드롭메뉴를 보여줌
-  listItems.forEach((element) => {
-    element.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-      const text = e.target.innerText;
-      const x = e.clientX;
-      const y = e.clientY;
-      projectDropMenu.style.top = `${y}px`;
-      projectDropMenu.style.left = `${x}px`;
-      projectDropMenu.classList.remove("hiding");
+  return text;
+}
 
-      //드롭메뉴에서 편집을 눌렀을 때!
-      pjDropList[0].addEventListener("click", editPj(e)); //project 수정하기 기능
+function removePj(text) {
+  pjDropList[2].addEventListener("click", () => {
+    const removeText = text;
+    const lgValue = localStorage.getItem("project");
+    console.log(
+      JSON.stringify(
+        JSON.parse(lgValue).filter((item) => item.value != removeText)
+      ),
+      removeText
+    );
+    localStorage.setItem(
+      "project",
+      JSON.stringify(
+        JSON.parse(lgValue).filter((item) => item.value != removeText)
+      )
+    );
 
-      //드롭메뉴에서 완료를 눌렀을 때!
-      //드롭메뉴에서 삭제를 눌렀을 때! 드롭메뉴 사라짐 삭제 준비!!
-      pjDropList[2].addEventListener("click", () => {
-        const removeText = text;
-        const lgValue = localStorage.getItem("project");
-        console.log(
-          JSON.stringify(
-            JSON.parse(lgValue).filter((item) => item.value != removeText)
-          ),
-          removeText
-        );
-        localStorage.setItem(
-          "project",
-          JSON.stringify(
-            JSON.parse(lgValue).filter((item) => item.value != removeText)
-          )
-        );
-
-        projectDropMenu.classList.add("hiding"); //dropmenu 사라짐
-      });
-    });
+    projectDropMenu.classList.add("hiding"); //dropmenu 사라짐
   });
 }
 
 function init() {
+  window.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+  });
   projectShow(); //localStorage에 있는 값 보여주기
 
   //modal
@@ -150,8 +145,25 @@ function init() {
     addProjectInput.value = "";
     addProjectModal.classList.add("hiding");
   });
-  console.log("a");
-  actPjList();
+
+  const listItems = navList.querySelectorAll("li");
+  listItems.forEach((element) => {
+    element.addEventListener("contextmenu", (e) => {
+      console.log("hello");
+      const text = dropCss(e);
+      pjDropList[0].addEventListener("click", editPj(e));
+      pjDropList[2].addEventListener("click", removePj(text));
+    });
+  });
+  listItems.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      const text = e.target.innerText;
+      console.log("hi");
+      projectDropMenu.classList.remove("hiding");
+      pjDropList[0].addEventListener("click", editPj(e));
+      pjDropList[2].addEventListener("click", removePj(text));
+    });
+  });
 }
 
 init();
