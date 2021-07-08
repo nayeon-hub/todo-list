@@ -8,6 +8,7 @@ const navList = document.querySelector(".nav-project");
 const projectDropMenu = document.querySelector(".drop-menu-project");
 const pjDropUl = projectDropMenu.querySelector("ul");
 const pjDropList = projectDropMenu.querySelectorAll("li");
+const colorList = document.getElementsByClassName("color-circle");
 
 let projectList = [];
 
@@ -38,8 +39,10 @@ function projectStore(event) {
   const p = addProjectInput.value;
   const item = {};
   const id = Symbol();
+  let color = "#768bfd";
   item["id"] = id;
   item["value"] = p;
+  item["color"] = color;
 
   //localstorage에 값 저장
   projectList.push(item);
@@ -57,6 +60,9 @@ function projectStore(event) {
 function addPj() {
   addProjectForm.addEventListener("submit", projectStore);
   //project 추가하려고 modal 클릭 -> 작성 후 확인버튼 누르면 -> localstorage에 저장하고 -> modal창 사라지고 -> 리스트 생성하고 -> 리스트 보여주기
+  colorList.forEach((element) => {
+    element.addEventListener("click", (e) => console.dir(e.target));
+  });
 }
 
 function editorPj(ogName) {

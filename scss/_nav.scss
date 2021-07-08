@@ -4,6 +4,7 @@ main {
   position: absolute;
   min-height: 678px;
   height: calc(100vh - 53px);
+  margin-bottom: 14px;
 }
 
 .container-left {
@@ -15,7 +16,7 @@ main {
 }
 
 .nav {
-  padding: 10px;
+  padding: 10px 6px;
 }
 
 .nav-todo {
@@ -51,7 +52,6 @@ main {
 .project-modal {
   @extend %modal;
   width: 340px;
-  height: 160px;
   text-align: center;
   padding: 18px;
   h3 {
@@ -65,18 +65,21 @@ main {
     padding: 8px 6px;
     border-radius: 4px;
     border: 1px solid $lightGray;
+    margin-bottom: 16px;
   }
-  .add-project-modal-btn {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-  }
+  // .add-project-modal-btn {
+  //   position: absolute;
+  //   bottom: 16px;
+  //   right: 16px;
+  // }
 }
 
 .add-project-modal-btn button {
   width: 87px;
   height: 37px;
   border-radius: 4px;
+  position: relative;
+  left: 63px;
   &:last-child {
     color: white;
     background: $red;
@@ -85,6 +88,7 @@ main {
   }
   &:first-child {
     color: black;
+    background: #fff;
     border: 1px solid $lightGray;
   }
 }
@@ -93,4 +97,123 @@ main {
   position: absolute;
   width: 93px;
   margin-top: -52px;
+}
+
+.palette-column {
+  display: flex;
+  justify-content: space-between;
+  width: 301px;
+  position: relative;
+  left: 2px;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+.palette-column:first-child {
+  margin-bottom: 8px;
+  .color-circle:nth-child(1) {
+    background: #aebdc3;
+  }
+  .color-circle:nth-child(2) {
+    background: #768bfd;
+  }
+
+  .color-circle:nth-child(3) {
+    background: #67c3e8;
+  }
+
+  .color-circle:nth-child(4) {
+    background: #f4b357;
+  }
+
+  .color-circle:nth-child(5) {
+    background: #c540b5;
+  }
+
+  .color-circle:nth-child(6) {
+    background: #f4658c;
+  }
+
+  .color-circle:nth-child(7) {
+    background: #f7d550;
+  }
+
+  .color-circle:nth-child(8) {
+    background: #a0ce62;
+  }
+
+  .color-circle:nth-child(9) {
+    background: #ff7f55;
+  }
+
+  .color-circle:nth-child(10) {
+    background: #a66ff0;
+  }
+}
+
+.palette-column:last-child {
+  margin-bottom: 17px;
+  .color-circle:nth-child(1) {
+    background: #1eacdc;
+  }
+  .color-circle:nth-child(2) {
+    background: #84e2ae;
+  }
+
+  .color-circle:nth-child(3) {
+    background: #8d4ce3;
+  }
+
+  .color-circle:nth-child(4) {
+    background: #4670f6;
+  }
+
+  .color-circle:nth-child(5) {
+    background: #e95ed3;
+  }
+
+  .color-circle:nth-child(6) {
+    background: #ec6b66;
+  }
+
+  .color-circle:nth-child(7) {
+    background: #a4a4a5;
+  }
+
+  .color-circle:nth-child(8) {
+    background: #b69a8f;
+  }
+
+  .color-circle:nth-child(9) {
+    background: #62e0c5;
+  }
+
+  .color-circle:nth-child(10) {
+    background: #4e4e4e;
+  }
+}
+.nav-project {
+  margin-top: 16px;
+}
+
+.nav-project li {
+  height: 100%;
+  background: gray;
+  padding: 12px;
+  margin-bottom: 2px;
+  border-radius: 8px;
+}
+
+.nav-project li::before {
+  background: goldenrod;
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  content: "";
+  border-radius: 50%;
+  margin-right: 12px;
 }
