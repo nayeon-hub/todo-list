@@ -8,6 +8,7 @@ const navList = document.querySelector(".nav-project");
 const projectDropMenu = document.querySelector(".drop-menu-project");
 const pjDropUl = projectDropMenu.querySelector("ul");
 const pjDropList = projectDropMenu.querySelectorAll("li");
+const colorList = document.getElementsByClassName("color-circle");
 
 let projectList = [];
 
@@ -37,9 +38,11 @@ function projectStore(event) {
 
   const p = addProjectInput.value;
   const item = {};
+  let color = "#768bfd";
   const id = Symbol();
   item["id"] = id;
   item["value"] = p;
+  item["color"] = color;
 
   //localstorage에 값 저장
   projectList.push(item);
@@ -55,6 +58,9 @@ function projectStore(event) {
 
 //***project 추가하기***
 function addPj() {
+  colorList.forEach((element) => {
+    element.addEventListener("click", (e) => console.dir(e.target));
+  });
   addProjectForm.addEventListener("submit", projectStore);
   //project 추가하려고 modal 클릭 -> 작성 후 확인버튼 누르면 -> localstorage에 저장하고 -> modal창 사라지고 -> 리스트 생성하고 -> 리스트 보여주기
 }
@@ -128,15 +134,16 @@ function removePj(text) {
 }
 
 function init() {
-  window.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-  });
+  // window.addEventListener("contextmenu", (e) => {
+  //   e.preventDefault();
+  // });
   projectShow(); //localStorage에 있는 값 보여주기
 
   //modal
   //프로젝트 추가를 눌렀을 때! 모달을 보여줌
   addProject.addEventListener("click", () => {
     addProjectModal.classList.remove("hiding");
+    console.log("here");
     addPj(); //project 추가하기 기능 할 수 있다!
   });
 
@@ -149,6 +156,7 @@ function init() {
   const listItems = navList.querySelectorAll("li");
   listItems.forEach((element) => {
     element.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
       console.log("hello");
       const text = dropCss(e);
       pjDropList[0].addEventListener("click", editPj(e));
