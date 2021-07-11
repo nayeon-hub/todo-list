@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
 .login-modal, .project-modal {
   position: relative;
@@ -154,7 +155,7 @@ button:active {
 input {
   padding: 0;
   outline: 0;
-  border: 1px solid black; }
+  border: none; }
 
 header {
   position: relative;
@@ -166,37 +167,37 @@ header {
   border-bottom: 2px solid #f3f4f6;
   background-color: #fff; }
 
-.login-menu {
+.login-button {
   display: flex;
   align-items: center;
   font-weight: 300;
   font-size: 15px; }
-  .login-menu img {
+  .login-button img {
     width: 35px;
     height: 31px;
     border-radius: 50%;
     margin-right: 10px; }
-  .login-menu span {
+  .login-button span {
     color: #fd5653; }
-  .login-menu span:last-child::before {
+  .login-button span:last-child::before {
     content: "|";
     margin: 0 4px; }
 
-.profile-menu {
+.profile-button {
   display: flex;
   align-items: center;
   font-weight: 300;
   font-size: 15px; }
-  .profile-menu img {
+  .profile-button img {
     width: 35px;
     height: 31px;
     border-radius: 50%;
     margin-right: 10px; }
-  .profile-menu span {
+  .profile-button span {
     color: "black"; }
-  .profile-menu:hover {
+  .profile-button:hover {
     cursor: pointer; }
-  .profile-menu i {
+  .profile-button i {
     margin-left: 8px;
     position: relative;
     top: 2px;
@@ -254,9 +255,9 @@ header {
     border-radius: 4px;
     font-weight: 400;
     color: #9b9b9b; }
-  .login-modal form input::placeholder {
-    font-weight: 500;
-    color: #c7c7c7; }
+    .login-modal form input ::placeholder {
+      font-weight: 500;
+      color: #c7c7c7; }
   .login-modal form input:first-child {
     margin-bottom: 10px; }
   .login-modal form::before {
@@ -284,45 +285,42 @@ header {
 .hiding {
   display: none; }
 
-.drop-menu {
+.drop-menu-user {
   position: absolute;
   left: 16px;
   top: 48px;
   background-color: #fff;
   border-radius: 6px;
-  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.1); }
-  .drop-menu li {
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.1);
+  z-index: 1; }
+  .drop-menu-user li {
     padding: 12px 0;
-    border-bottom: 1px solid #ececec; }
-    .drop-menu li:last-child {
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    flex-direction: column; }
+    .drop-menu-user li:last-child {
       border: none;
       display: flex;
       flex-direction: column; }
-
-.drop-menu {
-  z-index: 1; }
-  .drop-menu li {
-    display: flex;
-    flex-direction: column; }
-  .drop-menu span {
+  .drop-menu-user span {
     line-height: 1.6;
     padding: 0 18px;
     font-size: 16px;
     font-weight: 300;
     color: #c7c7c7; }
-  .drop-menu button {
+  .drop-menu-user button {
     padding: 0 18px;
     text-align: left;
     font-size: 16px;
     line-height: 1.6;
     font-weight: 300; }
-    .drop-menu button:hover {
+    .drop-menu-user button:hover {
       background: rgba(0, 0, 0, 0.04); }
 
 main {
   display: flex;
-  flex-direction: column;
   position: absolute;
+  width: 100%;
   min-height: 678px;
   height: calc(100vh - 53px);
   margin-bottom: 14px; }
@@ -330,7 +328,7 @@ main {
 .container-left {
   position: relative;
   height: 100%;
-  width: 275px;
+  width: 355px;
   background: #fff;
   border-right: 1px solid #f3f4f6; }
 
@@ -358,7 +356,12 @@ main {
 
 .add-project button:first-child::before {
   content: "+";
-  margin-right: 6px; }
+  margin-right: 6px;
+  font-size: 28px; }
+
+.add-project button:first-child span {
+  position: relative;
+  top: -4px; }
 
 .project-modal {
   width: 340px;
@@ -473,6 +476,87 @@ main {
   content: "";
   border-radius: 50%;
   margin-right: 12px; }
+
+.container-right {
+  background-color: #f3f4f6;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px 20px; }
+  .container-right h2 {
+    font-size: 21px;
+    margin-bottom: 27px;
+    font-weight: 600; }
+
+.todo-info {
+  width: 100%;
+  padding: 9px 0px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 17px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .todo-info span {
+    text-align: center;
+    font-size: 32px;
+    color: #fd5653; }
+    .todo-info span::after {
+      font-size: 14px;
+      display: block;
+      margin-top: 5px;
+      color: #9b9b9b; }
+  .todo-info span:first-child::after {
+    content: "예정 시간(h)"; }
+  .todo-info span:nth-child(2)::after {
+    content: "완료할 작업"; }
+  .todo-info span:nth-child(3)::after {
+    content: "완료한 시간(h)"; }
+  .todo-info span:last-child::after {
+    display: block;
+    content: "완료한 작업"; }
+
+.todo-input {
+  width: 100%;
+  height: 43px;
+  border-radius: 6px;
+  padding: 13px 15px;
+  background-color: #ffffff;
+  margin-bottom: 24px; }
+  .todo-input ::placeholder {
+    color: #dddcdc; }
+  .todo-input::before {
+    content: "+";
+    font-size: 27px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    color: #dddcdc; }
+  .todo-input input {
+    width: 80%;
+    position: relative;
+    top: -10px;
+    margin-left: 10px; }
+
+.todo-proceed-box {
+  margin-bottom: 14px; }
+  .todo-proceed-box h3 {
+    font-size: 15px;
+    margin-bottom: 13px; }
+
+.todo-complete-box {
+  text-align: center; }
+
+.todo-complete-btn {
+  background-color: #ffff;
+  padding: 1px 19px; }
+  .todo-complete-btn::after {
+    margin-left: 2px;
+    content: "▼";
+    height: 100%;
+    font-size: 1px;
+    position: relative;
+    top: -1px; }
 
 body {
   height: 100vh; }

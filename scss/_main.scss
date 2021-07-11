@@ -1,7 +1,7 @@
 main {
   display: flex;
-  flex-direction: column;
   position: absolute;
+  width: 100%;
   min-height: 678px;
   height: calc(100vh - 53px);
   margin-bottom: 14px;
@@ -10,7 +10,7 @@ main {
 .container-left {
   position: relative;
   height: 100%;
-  width: 275px;
+  width: 355px;
   background: #fff;
   border-right: 1px solid $bgColor;
 }
@@ -46,6 +46,11 @@ main {
   &::before {
     content: "+";
     margin-right: 6px;
+    font-size: 28px;
+  }
+  span {
+    position: relative;
+    top: -4px;
   }
 }
 
@@ -67,11 +72,6 @@ main {
     border: 1px solid $lightGray;
     margin-bottom: 16px;
   }
-  // .add-project-modal-btn {
-  //   position: absolute;
-  //   bottom: 16px;
-  //   right: 16px;
-  // }
 }
 
 .add-project-modal-btn button {
@@ -216,4 +216,112 @@ main {
   content: "";
   border-radius: 50%;
   margin-right: 12px;
+}
+
+.container-right {
+  background-color: #f3f4f6;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px 20px;
+
+  h2 {
+    font-size: 21px;
+    margin-bottom: 27px;
+    font-weight: 600;
+  }
+}
+
+.todo-info {
+  width: 100%;
+  padding: 9px 0px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 17px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  span {
+    text-align: center;
+    font-size: 32px;
+    color: $red;
+    &::after {
+      font-size: 14px;
+      display: block;
+      margin-top: 5px;
+      color: $darkGray;
+    }
+  }
+  span:first-child {
+    &::after {
+      content: "예정 시간(h)";
+    }
+  }
+  span:nth-child(2) {
+    &::after {
+      content: "완료할 작업";
+    }
+  }
+  span:nth-child(3) {
+    &::after {
+      content: "완료한 시간(h)";
+    }
+  }
+  span:last-child {
+    &::after {
+      display: block;
+      content: "완료한 작업";
+    }
+  }
+}
+
+.todo-input {
+  width: 100%;
+  height: 43px;
+  border-radius: 6px;
+  padding: 13px 15px;
+  background-color: #ffffff;
+  margin-bottom: 24px;
+  ::placeholder {
+    color: $lightGray;
+  }
+  &::before {
+    content: "+";
+    font-size: 27px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    color: $lightGray;
+  }
+  input {
+    width: 80%;
+    position: relative;
+    top: -10px;
+    margin-left: 10px;
+  }
+}
+
+.todo-proceed-box {
+  margin-bottom: 14px;
+  h3 {
+    font-size: 15px;
+    margin-bottom: 13px;
+  }
+}
+
+.todo-complete-box {
+  text-align: center;
+}
+
+.todo-complete-btn {
+  background-color: #ffff;
+  padding: 1px 19px;
+  &::after {
+    margin-left: 2px;
+    content: "▼";
+    height: 100%;
+    font-size: 1px;
+    position: relative;
+    top: -1px;
+  }
 }

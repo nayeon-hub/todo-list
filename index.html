@@ -13,12 +13,12 @@
   </head>
   <body>
     <header>
-      <button type="button" class="login-menu">
+      <button type="button" class="login-button">
         <img src="./assets/user.png" alt="profile" />
         <span>로그인</span>
         <span>가입하기</span>
       </button>
-      <button type="button" class="profile-menu hiding">
+      <button type="button" class="profile-button hiding">
         <img src="./assets/user.png" alt="profile" />
         <span aria-label="user name"></span>
         <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -39,7 +39,7 @@
           </button>
         </div>
       </div>
-      <div class="drop-menu hiding">
+      <div class="drop-menu-user hiding">
         <ul>
           <li>
             <span>최근 동기화 : 0 시간 전</span>
@@ -117,7 +117,9 @@
           </ul>
         </div>
         <div class="add-project">
-          <button class="add-item">프로젝트 추가</button>
+          <button class="add-item">
+              <span> 프로젝트 추가</span>  
+           </button>
           <button class="add-tag"></button>
           <button class="add-folder"></button>
         </div>
@@ -160,9 +162,31 @@
           </div>
         </div>
       </div>
+      <div class="container-right">
+        <h2>오늘</h2>
+        <div class="todo-info">
+          <span>0</span>
+          <span>0</span>
+          <span>0</span>
+          <span>0</span>
+        </div>
+        <div class="todo-input">
+          <input type="text" placeholder="&quot;할 일&quot;에 작업 추가하기, [엔터키를] 눌러 보존합니다">
+        </div>
+        <div class="todo-proceed-box">
+          <h3>할 일</h3>
+        </div>
+        <div class="todo-complete-box">
+          <button type="button" class="todo-complete-btn">
+            완료된 작업 보기
+         </button>
+        </div>
+      </div>
     </main>
     <script src="./hiding.js"></script>
     <script src="./login.js"></script>
+    <script src="./logout.js"></script>
     <script src="./addProject.js"></script>
+    <script src="./editProject.js"></script>
   </body>
 </html>
