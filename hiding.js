@@ -1,23 +1,38 @@
 const body = document.querySelector("body");
-const loginMenu = document.querySelector(".login-menu");
+const loginBtn = document.querySelector(".login-button");
 const loginModal = document.querySelector("#login-page");
 const loginClose = loginModal.querySelector(".close");
-const userMenu = document.querySelector(".profile-menu");
-const dropMenu = document.querySelector(".drop-menu");
+const profileBtn = document.querySelector(".profile-button");
+const userDropMenu = document.querySelector(".drop-menu-user");
+const header = document.querySelector("header");
+const leftBox = document.querySelector(".container-left");
 
-loginMenu.addEventListener("click", () => {
-  loginModal.classList.remove("hiding");
+function showItem(element) {
+  element.classList.remove("hiding");
+}
+
+function hideItem(element) {
+  element.classList.add("hiding");
+}
+
+// 로그인 안됬을 때 로그인 button => modal 보여줌
+loginBtn.addEventListener("click", () => {
+  showItem(loginModal);
 });
 
 loginClose.addEventListener("click", () => {
-  loginModal.classList.add("hiding");
+  hideItem(loginModal);
 });
 
-userMenu.addEventListener("click", () => {
-  const c = dropMenu.classList[1];
+//로그인 됬을 때 로그인 button => dropbtn 보여줌
+profileBtn.addEventListener("click", () => {
+  const c = userDropMenu.classList[1];
   if (c == "hiding") {
-    dropMenu.classList.remove("hiding");
+    showItem(userDropMenu);
   } else {
-    dropMenu.classList.add("hiding");
+    hideItem(userDropMenu);
   }
 });
+
+header.addEventListener("contextmenu", (e) => e.preventDefault());
+leftBox.addEventListener("contextmenu", (e) => e.preventDefault());

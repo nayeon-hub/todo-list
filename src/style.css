@@ -8,6 +8,18 @@
   background-color: #fff;
   border-radius: 6px; }
 
+.drop-menu-user, .drop-menu-project {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.1); }
+
+.todo-input, .todo-proceed-box ul li {
+  width: 100%;
+  height: 43px;
+  border-radius: 4px;
+  padding: 13px 15px;
+  background-color: #ffffff; }
+
 * {
   font-family: "Noto Sans KR", sans-serif;
   box-sizing: border-box; }
@@ -289,9 +301,6 @@ header {
   position: absolute;
   left: 16px;
   top: 48px;
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.1);
   z-index: 1; }
   .drop-menu-user li {
     padding: 12px 0;
@@ -398,7 +407,13 @@ main {
 .drop-menu-project {
   position: absolute;
   width: 93px;
-  margin-top: -52px; }
+  margin-top: -52px;
+  padding: 6px 0px;
+  width: 62%; }
+  .drop-menu-project li {
+    padding: 6px 14px; }
+    .drop-menu-project li:hover {
+      background: rgba(0, 0, 0, 0.04); }
 
 .palette-column {
   display: flex;
@@ -467,15 +482,13 @@ main {
   padding: 12px;
   margin-bottom: 2px;
   border-radius: 8px; }
-
-.nav-project li::before {
-  background: goldenrod;
-  width: 9px;
-  height: 9px;
-  display: inline-block;
-  content: "";
-  border-radius: 50%;
-  margin-right: 12px; }
+  .nav-project li span {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    content: "";
+    border-radius: 50%;
+    margin-right: 12px; }
 
 .container-right {
   background-color: #f3f4f6;
@@ -491,7 +504,7 @@ main {
   width: 100%;
   padding: 9px 0px;
   background-color: #ffffff;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-bottom: 17px;
   display: flex;
   justify-content: space-around;
@@ -516,11 +529,6 @@ main {
     content: "완료한 작업"; }
 
 .todo-input {
-  width: 100%;
-  height: 43px;
-  border-radius: 6px;
-  padding: 13px 15px;
-  background-color: #ffffff;
   margin-bottom: 24px; }
   .todo-input ::placeholder {
     color: #dddcdc; }
@@ -543,6 +551,8 @@ main {
   .todo-proceed-box h3 {
     font-size: 15px;
     margin-bottom: 13px; }
+  .todo-proceed-box ul li {
+    margin-bottom: 5px; }
 
 .todo-complete-box {
   text-align: center; }

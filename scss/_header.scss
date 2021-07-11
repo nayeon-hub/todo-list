@@ -134,12 +134,10 @@ header {
 }
 
 .drop-menu-user {
+  @extend %drop-menu;
   position: absolute;
   left: 16px;
   top: 48px;
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.1);
   z-index: 1;
   li {
     padding: 12px 0;
