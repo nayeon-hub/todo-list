@@ -1,9 +1,6 @@
 const loginForm = document.querySelector(".login-form");
 const loginInput = loginForm.querySelectorAll("input");
-
-const profileMenu = document.querySelector(".profile-menu");
-const profileName = profileMenu.querySelector("span");
-const logOutBtn = document.querySelector(".logout");
+const profileName = profileBtn.querySelector("span");
 
 //localStorage에 저장
 function localStore(value) {
@@ -23,26 +20,19 @@ function logIn(event) {
   localStore(v[0]);
 
   loginModal.classList.add("hiding");
-  profileMenu.classList.remove("hiding");
-  loginMenu.classList.add("hiding");
-}
-
-function logOut() {
-  const l = localStorage.getItem("UserName");
-  localStore("");
-  dropMenu.classList.add("hiding");
-  profileShow();
+  profileBtn.classList.remove("hiding");
+  loginBtn.classList.add("hiding");
 }
 
 //localStorage 체크
 function profileShow() {
   const l = localStorage.getItem("UserName");
   if (l === "" || localStorage.key("UserName") === null) {
-    profileMenu.classList.add("hiding");
-    loginMenu.classList.remove("hiding");
+    profileBtn.classList.add("hiding");
+    loginBtn.classList.remove("hiding");
   } else {
-    profileMenu.classList.remove("hiding");
-    loginMenu.classList.add("hiding");
+    profileBtn.classList.remove("hiding");
+    loginBtn.classList.add("hiding");
     profileName.innerText = l;
   }
 }
@@ -50,7 +40,6 @@ function profileShow() {
 function init() {
   profileShow();
   loginForm.addEventListener("submit", logIn);
-  logOutBtn.addEventListener("click", logOut);
 }
 
 init();
