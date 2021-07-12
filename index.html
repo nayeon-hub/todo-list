@@ -78,36 +78,53 @@
             </button>
           </li>
         </ul>
-      </div>  
+      </div>
     </header>
     <main>
       <div class="container-left">
         <div class="nav">
           <ul class="nav-todo">
             <li>
-              오늘
-              <span>0h</span>
-              <span>3</span>
+              <button>
+                오늘
+                <span>
+                  <span>0h</span>
+                  <span>3</span>
+                </span>
+              </button>
             </li>
             <li>
-              내일
-              <span>0h</span>
-              <span>0</span>
+              <button>
+                내일
+                <span>
+                  <span>0h</span>
+                  <span>0</span>
+                </span>
+              </button>
             </li>
             <li>
-              다음
-              <span>0h</span>
-              <span>0</span>
+              <button>
+                다음
+                <span>
+                  <span>0h</span>
+                  <span>0</span>
+                </span>
+              </button>
             </li>
             <li>
-              추후
-              <span>0h</span>
-              <span>0</span>
+              <button>
+                추후
+                <span>
+                  <span>0h</span>
+                  <span>0</span>
+                </span>
+              </button>
             </li>
-            <li>완료됨</li>
+            <li>
+              <button>완료됨</button>
+            </li>
           </ul>
           <ul class="nav-project"></ul>
-          </ul>
         </div>
         <div class="drop-menu-project hiding">
           <ul>
@@ -118,8 +135,8 @@
         </div>
         <div class="add-project">
           <button class="add-item">
-              <span> 프로젝트 추가</span>  
-           </button>
+            <span> 프로젝트 추가</span>
+          </button>
           <button class="add-tag"></button>
           <button class="add-folder"></button>
         </div>
@@ -127,7 +144,7 @@
           <div class="project-modal modal">
             <h3>프로젝트 추가</h3>
             <form action="" class="add-project-form">
-              <input type="text" placeholder="새로운 프로젝트 이름">
+              <input type="text" placeholder="새로운 프로젝트 이름" />
               <div class="color-palette">
                 <div class="palette-column">
                   <div class="color-circle"></div>
@@ -153,11 +170,11 @@
                   <div class="color-circle"></div>
                   <div class="color-circle"></div>
                 </div>
-               </div>
+              </div>
               <div class="add-project-modal-btn">
                 <button type="button">취소</button>
                 <button type="submit">확인</button>
-              </div>  
+              </div>
             </form>
           </div>
         </div>
@@ -171,7 +188,10 @@
           <span>0</span>
         </div>
         <form class="todo-input">
-          <input type="text" placeholder="&quot;할 일&quot;에 작업 추가하기, [엔터키를] 눌러 보존합니다">
+          <input
+            type="text"
+            placeholder='"할 일"에 작업 추가하기, [엔터키를] 눌러 보존합니다'
+          />
         </form>
         <div class="todo-proceed-box">
           <h3>할 일</h3>
@@ -180,10 +200,10 @@
         <div class="todo-complete-box">
           <button type="button" class="todo-complete-btn">
             완료된 작업 보기
-         </button>
-         <div class="todo-complete">
-           <ul></ul>
-         </div>
+          </button>
+          <div class="todo-complete">
+            <ul></ul>
+          </div>
         </div>
       </div>
     </main>
@@ -193,5 +213,6 @@
     <script src="./addProject.js"></script>
     <script src="./editProject.js"></script>
     <script src="./addTodo.js"></script>
+    <script src="./changepg.js"></script>
   </body>
 </html>
