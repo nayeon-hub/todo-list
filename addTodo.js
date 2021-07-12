@@ -1,39 +1,52 @@
 const todoInputDiv = document.querySelector(".todo-input");
 const todoInput = todoInputDiv.querySelector("input");
 const proceedDiv = document.querySelector(".todo-proceed-box");
-const proceedUl = proceedDiv.querySelector("ul");
 let todoList = [];
 
-function todoCreate(element) {
+function todoCreate(str, space) {
   const li = document.createElement("li");
-  const ul = proceedDiv.querySelector("ul");
-  li.innerText = element["value"];
-  ul.appendChild(li);
-  proceedDiv.appendChild(ul);
+  const btn1 = document.createElement("button");
+  const btn2 = document.createElement("button");
+  const span = document.createElement("span");
+  btn1.innerText = "✅";
+  btn2.innerText = "❌";
+  span.innerText = str;
+  li.appendChild(btn1);
+  li.appendChild(btn2);
+  li.appendChild(span);
+  space.appendChild(li);
+  proceedDiv.appendChild(space);
 }
 
 function todoShow() {
-  let ls = localStorage.getItem("todoList");
-  ls = JSON.parse(ls);
-  ls.forEach((element) => {
-    todoCreate(element);
-  });
+  let ls = JSON.parse(localStorage.getItem("todoList"));
+  if (ls !== null) {
+    ls.forEach((element) => {
+      const ul = proceedDiv.querySelector("ul");
+      todoCreate(element["value"], ul);
+    });
+  }
 }
 
-function todoStore(l) {
+function proceedStore(l) {
+  const ul = proceedDiv.querySelector("ul");
+  todoList = JSON.parse(localStorage.getItem("todoList"));
+  if (todoList === null) {
+    todoList = [];
+  }
   todoList.push(l);
   localStorage.setItem("todoList", JSON.stringify(todoList));
-  todoShow();
+  todoCreate(l["value"], ul);
 }
 
 function init() {
   todoShow();
   todoInputDiv.addEventListener("submit", (e) => {
     e.preventDefault();
-    let todoObject = {};
+    const todoObject = {};
     todoObject["value"] = todoInput.value;
     todoInput.value = "";
-    todoStore(todoObject);
+    proceedStore(todoObject);
   });
 }
 
