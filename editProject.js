@@ -168,7 +168,6 @@ function init() {
     addProjectInput.value = "";
     addProjectModal.classList.add("hiding");
   });
-  console.log("a");
   actPjList();
 }
 
